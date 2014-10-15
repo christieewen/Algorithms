@@ -11,24 +11,24 @@
 // TODO: hash method implementation
 // TODO: optimize using the fact that there are mirror images of the characters in the permutations.
 //
-var dictionary = ["cinema", "iceman"];
+var dictionary = ["cinema", "iceman", "love", "evol"];
 
 function anagrams_for(word) {
   var word_char_array = word.split("");
   
   // TODO: iterate through each character shifting/unshifting characters, check if word exists to print
   // Don't use shift/unshift because it is an expensive operation.  Try using a Queue or slice/splice
-  for (i=0; i < word_char_array.length; i++) {
-      var pivot = word.shift(); // remove the first letter
-      word.unshift(word.pop()); // remove the last and place in beginning
-      var new_word = pivot.concat(word);
-      for (j=i; )
-      if (new_word in dictionary) 
-        print word;
-      }
-
+  
+   for (i=0; i < word_char_array.length; i++) {
+     for (j=i; j < word_char_array.length; j++){
+        word_char_array.splice(j, 0, word_char_array.pop());
+        //if (word_char_array.toString() in dictionary) 
+        document.write(word_char_array.toString());
+       }
+    word_char_array.splice(0,0, word_char_array.pop())
+   }    
 }
 
 
 
-anagrams_for("cinema");
+anagrams_for("love");
