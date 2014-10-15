@@ -13,10 +13,11 @@
 var dictionary = ["cinema", "iceman"];
 
 function anagrams_for(word) {
-  var new_word;
+  var word_char_array = word.split("");
+  
   // TODO: iterate through each character shifting/unshifting characters, check if word exists to print
   // Don't use shift/unshift because it is an expensive operation.  Try using a Queue or slice/splice
-  for (i=0; i < new_word.length; i++) {
+  for (i=0; i < word_char_array.length; i++) {
       var pivot = word.shift(); // remove the first letter
       word.unshift(word.pop()); // remove the last and place in beginning
       var new_word = pivot.concat(word);
