@@ -9,6 +9,7 @@
 //
 // array methods implementation
 // TODO: hash method implementation
+// TODO: optimize using the fact that there are mirror images of the characters in the permutations.
 //
 var dictionary = ["cinema", "iceman"];
 
