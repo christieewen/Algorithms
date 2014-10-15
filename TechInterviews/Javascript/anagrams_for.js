@@ -23,7 +23,7 @@ function anagrams_for(word) {
      for (j=i; j < word_char_array.length; j++){
         word_char_array.splice(j, 0, word_char_array.pop());
         //if (word_char_array.toString() in dictionary) 
-        document.write(word_char_array.toString());
+        document.write(word_char_array.toString() + "<br>");
        }
     word_char_array.splice(0,0, word_char_array.pop())
    }    
