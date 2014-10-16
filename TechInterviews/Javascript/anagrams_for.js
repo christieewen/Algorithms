@@ -29,6 +29,9 @@ function anagrams_for(word) {
    }    
 }
 
-
+function anagrams_for_builtin(word){
+  var word_char_array = word.split("");
+  
+}
 
 anagrams_for("love");
