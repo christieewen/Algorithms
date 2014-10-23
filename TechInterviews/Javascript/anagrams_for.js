@@ -10,7 +10,10 @@
 // array methods implementation
 // TODO: hash method implementation
 // TODO: optimize using the fact that there are mirror images of the characters in the permutations.
-//
+// TODO: permutations function
+// Brain storming idea: how about each index is treated as another dimension? For example, [0,1] is 2 dimensions x,y for a 
+// 2x2 matrix and [0,1,2] is 3 dimensions for a 2x2x2 and so on.  Perhaps use hyper-cube.  Please note I have no idea 
+// what I'm talking about.
 var dictionary = ["cinema", "iceman", "love", "evol"];
 
 function anagrams_for(word) {
