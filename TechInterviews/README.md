@@ -52,5 +52,6 @@ Index       Letters
 2 3 1 0     T G C A
 3 2 1 0     G T C A
 
-You might notice a mirror image if you split the rows in half.  This fact could be used for optimization.
+You might notice a mirror image if you split the rows in half.  This fact could be used for optimization. 
+Please view this in edit mode.
 
