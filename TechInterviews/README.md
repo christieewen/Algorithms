@@ -8,6 +8,9 @@ the 0th element of an array.
 
 Example using a word that contains 3 letters ("CAT": array[0]="C", array[1]="A", array[2]="T"), 
 holding the 0th element of an array ("C") for every 2 rows a new column:
+
+
+
 Index     Letters
 0 1 2     C A T
 0 2 1     C T A
