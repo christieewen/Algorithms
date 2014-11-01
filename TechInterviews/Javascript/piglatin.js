@@ -1,7 +1,7 @@
 function getPigLatin(word) {
   var firstLetter = word.charAt(0);
   var pigLatin = "";
-  if firstLetter in ['a', 'e', 'i', 'o', 'y']
+  if firstLetter in ['a', 'e', 'i', 'o', 'u', 'y']
     pigLatin = word.concat("ay");
   else
     pigLatin = word.splice(1).concat(firstLetter, "ay");
