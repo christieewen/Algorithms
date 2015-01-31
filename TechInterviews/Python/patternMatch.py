@@ -8,6 +8,7 @@ def findBestMatch(patterns, paths):
     result = []
     temp = []
     for path in paths:
+        temp.clear()
 ...     for pattern in patterns:
 ...         if re.findall(r'pattern', path):
                 temp.append(pattern)
@@ -15,7 +16,8 @@ def findBestMatch(patterns, paths):
             result.append(findBestWildCardMatch(temp))
         else if len(temp) == 0:
             result.append("NO MATCH FOUND")
-            
+        
+        
 #['foot', 'fell', 'fastest']
 # Example to call this program: python34 patternMatch.py <input_file> output_file 
 def main(args):
@@ -26,11 +28,11 @@ def main(args):
     path_list = []
     
     N = input_file.readline()
-    for N in input_file:
+    for i in range(N):
         pattern_list.append(input_file.readline())
     
     M = input_file.readline()
-    for M in input_file:
+    for j in range(M):
         path_list.append(input_file.readline())
     
 if __name__ == '__main__':
