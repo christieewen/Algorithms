@@ -1,8 +1,21 @@
 import sys
 import re
 
-def findBestMatch(pattern, path):
-    re.findall(r+pattern, path)
+def findBestWildCardMatch(patterns):
+    pass
+
+def findBestMatch(patterns, paths):
+    result = []
+    temp = []
+    for path in paths:
+...     for pattern in patterns:
+...         if re.findall(r'pattern', path):
+                temp.append(pattern)
+        if len(temp) > 1:
+            result.append(findBestWildCardMatch(temp))
+        else if len(temp) == 0:
+            result.append("NO MATCH FOUND")
+            
 #['foot', 'fell', 'fastest']
 # Example to call this program: python34 patternMatch.py <input_file> output_file 
 def main(args):
