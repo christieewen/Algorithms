@@ -1,5 +1,10 @@
+import sys
+import re
 
-# Example to call this program: python33 patternMatch.py <input_file> output_file 
+def findBestMatch(pattern, path):
+    re.findall(r+pattern, path)
+#['foot', 'fell', 'fastest']
+# Example to call this program: python34 patternMatch.py <input_file> output_file 
 def main(args):
     input_file = open(args[1], 'r')
     output_file = open(args[2], 'w')
@@ -10,7 +15,6 @@ def main(args):
     for M in input_file:
         input_file.readline()
     
-
 if __name__ == '__main__':
     main(sys.argv)
     
