@@ -1,6 +1,13 @@
 import sys
 import re
 
+def stripSlashes(path):
+    if path.startsWith('/'):
+        path = path[1:]
+    if path.endsWith('/'):
+        path = path[:-1]
+    return path
+
 def findBestWildCardMatch(patterns):
     pass
 
@@ -14,7 +21,6 @@ def findBestMatch(patterns, paths):
         temp.clear()
         for pattern in patterns:
             rePattern = getRePattern(pattern)
-            print(rePattern)
             if re.search(rePattern, path):
                 temp.append(pattern)
         if len(temp) > 1:
