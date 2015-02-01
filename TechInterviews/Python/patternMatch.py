@@ -5,7 +5,7 @@ def findBestWildCardMatch(patterns):
     pass
 
 def getRePattern(pattern):
-    return re.sub(pattern, '\,', '/')
+    return 'r'+'''+ re.sub(pattern, '\,', '/') + '''
 
 def findBestMatch(patterns, paths):
     result = []
@@ -32,11 +32,12 @@ def main(args):
     pattern_list = []
     path_list = []
 
-    N = input_file.readline()
+    # Expects correct format in file: int N followed by pattern lines then int M followed by path lines.
+    N = int(input_file.readline())
     for j in range(N):
         pattern_list.append(input_file.readline())
 
-    M = input_file.readline()
+    M = int(input_file.readline())
     for i in range(M):
         path_list.append(input_file.readline())
 
