@@ -31,9 +31,12 @@ def findBestMatch(patterns, paths):
         temp.clear()
         for pattern in patterns:
             rePattern = getRePattern(pattern)
+            print(rePattern)
             if re.search(rePattern, stripSlashes(path)):
                 temp.append(pattern)
-        if len(temp) > 1:
+        if len(temp) == 1:
+            result.append(temp[0])
+        elif len(temp) > 1:
             result.append(findBestWildCardMatch(temp))
         elif len(temp) == 0:
             result.append("NO MATCH FOUND")
@@ -52,11 +55,11 @@ def main(args):
     # Expects correct format in file: int N followed by pattern lines then int M followed by path lines.
     N = int(input_file.readline())
     for j in range(N):
-        pattern_list.append(input_file.readline())
+        pattern_list.append((input_file.readline()).strip())
 
     M = int(input_file.readline())
     for i in range(M):
-        path_list.append(input_file.readline())
+        path_list.append((input_file.readline()).strip())
 
     print(findBestMatch(pattern_list, path_list))
 
