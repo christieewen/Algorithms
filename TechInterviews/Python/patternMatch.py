@@ -12,8 +12,15 @@ def stripSlashes(path):
 def findBestWildCardMatch(patterns):
     #The best match is wildcards that are rightmost
     #Get the positions of the * and add them to get the largest number to figure out which is rightmost
-    pass
-
+    patternsDict = {}
+    for pattern in patterns:
+        total = 0
+        for m in re.finditer("*", pattern):
+            total = total + m.start()
+        patternsDict[total] = pattern # {key:value} {total:pattern}
+        
+    return patternsDict[sorted(patternsDict.keys())[-1]]
+    
 def getRePattern(pattern):
     return pattern.replace(',', '/').replace('*', '[a-zA-Z0-9_]*')
 
