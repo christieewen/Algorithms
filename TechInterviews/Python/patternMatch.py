@@ -5,7 +5,7 @@ def findBestWildCardMatch(patterns):
     pass
 
 def getRePattern(pattern):
-    return 'r'+'''+ re.sub(pattern, '\,', '/') + '''
+    return '''+ pattern.replace(',', '/') + '''
 
 def findBestMatch(patterns, paths):
     result = []
@@ -14,7 +14,7 @@ def findBestMatch(patterns, paths):
         temp.clear()
         for pattern in patterns:
             rePattern = getRePattern(pattern)
-            if re.findall(rePattern, path):
+            if re.search(rePattern, path):
                 temp.append(pattern)
         if len(temp) > 1:
             result.append(findBestWildCardMatch(temp))
