@@ -1,6 +1,7 @@
 import sys
 import re
 
+# Strip only the beginning and ending slashes
 def stripSlashes(path):
     if path.startswith('/'):
         path = path[1:]
@@ -9,6 +10,8 @@ def stripSlashes(path):
     return path
 
 def findBestWildCardMatch(patterns):
+    #The best match is wildcards that are rightmost
+    #Get the positions of the * and add them to get the largest number to figure out which is rightmost
     pass
 
 def getRePattern(pattern):
