@@ -2,9 +2,9 @@ import sys
 import re
 
 def stripSlashes(path):
-    if path.startsWith('/'):
+    if path.startswith('/'):
         path = path[1:]
-    if path.endsWith('/'):
+    if path.endswith('/'):
         path = path[:-1]
     return path
 
@@ -21,7 +21,7 @@ def findBestMatch(patterns, paths):
         temp.clear()
         for pattern in patterns:
             rePattern = getRePattern(pattern)
-            if re.search(rePattern, path):
+            if re.search(rePattern, stripSlashes(path)):
                 temp.append(pattern)
         if len(temp) > 1:
             result.append(findBestWildCardMatch(temp))
