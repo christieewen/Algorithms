@@ -15,7 +15,7 @@ def findBestWildCardMatch(patterns):
     patternsDict = {}
     for pattern in patterns:
         total = 0
-        for m in re.finditer("*", pattern):
+        for m in re.finditer("\*", pattern):
             total = total + m.start()
         patternsDict[total] = pattern # {key:value} {total:pattern}
         
