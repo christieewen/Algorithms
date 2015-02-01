@@ -31,7 +31,6 @@ def findBestMatch(patterns, paths):
         temp.clear()
         for pattern in patterns:
             rePattern = getRePattern(pattern)
-            print(rePattern)
             if re.search(rePattern, stripSlashes(path)):
                 temp.append(pattern)
         if len(temp) == 1:
@@ -43,7 +42,6 @@ def findBestMatch(patterns, paths):
 
     return result
 
-#['foot', 'fell', 'fastest']
 # Example to call this program: python34 patternMatch.py <input_file> output_file
 def main(args):
     input_file = open(args[1], 'r')
@@ -63,6 +61,9 @@ def main(args):
 
     print(findBestMatch(pattern_list, path_list))
 
+    for result in findBestMatch(pattern_list, path_list):
+        output_file.write(result + "\n")
+        
     input_file.close()
     output_file.close()
 
