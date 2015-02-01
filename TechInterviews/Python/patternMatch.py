@@ -4,20 +4,25 @@ import re
 def findBestWildCardMatch(patterns):
     pass
 
+def getRePattern(pattern):
+    return re.sub(pattern, '\,', '/')
+
 def findBestMatch(patterns, paths):
     result = []
     temp = []
     for path in paths:
         temp.clear()
 ...     for pattern in patterns:
-...         if re.findall(r'pattern', path):
+            rePattern = getRePattern(pattern)
+...         if re.findall(r'rePattern', path):
                 temp.append(pattern)
         if len(temp) > 1:
             result.append(findBestWildCardMatch(temp))
         else if len(temp) == 0:
             result.append("NO MATCH FOUND")
         
-        
+    return result
+    
 #['foot', 'fell', 'fastest']
 # Example to call this program: python34 patternMatch.py <input_file> output_file 
 def main(args):
@@ -28,12 +33,17 @@ def main(args):
     path_list = []
     
     N = input_file.readline()
-    for i in range(N):
+    for j in range(N):
         pattern_list.append(input_file.readline())
     
     M = input_file.readline()
-    for j in range(M):
+    for i in range(M):
         path_list.append(input_file.readline())
+    
+    print(findBestMatch(pattern_list, path_list))
+    
+    input_file.close()
+    output_file.close()
     
 if __name__ == '__main__':
     main(sys.argv)
